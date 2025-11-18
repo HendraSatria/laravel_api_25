@@ -3,39 +3,37 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\ProductCategory;
+use App\Models\ProductCategories; 
 use Illuminate\Http\Request;
 
 class ProductCategoriesController extends Controller
 {
-    // ✅ 1. Menampilkan semua kategori
+    // Menampilkan semua kategori
     public function index()
     {
-        $categories = ProductCategory::all();
+        $categories = ProductCategories::all();
         return response()->json($categories);
     }
 
-    // ✅ 2. Menambahkan kategori baru
+    //  Menambahkan kategori baru
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            
             'name' => 'required|string|max:255',
-           
             'description' => 'nullable|string|max:255',
         ]);
 
-        $productCategory = ProductCategory::create($validateData);
+        $productCategory = ProductCategories::create($validateData);
         return response()->json([
             'message' => 'Kategori berhasil ditambahkan.',
             'data' => $productCategory
         ], 201);
     }
 
-    // ✅ 3. Menampilkan detail kategori berdasarkan ID
+    // Menampilkan detail kategori berdasarkan ID
     public function show($id)
     {
-        $category = ProductCategory::find($id);
+        $category = ProductCategories::find($id);
 
         if (!$category) {
             return response()->json(['message' => 'Kategori tidak ditemukan'], 404);
@@ -44,10 +42,10 @@ class ProductCategoriesController extends Controller
         return response()->json($category);
     }
 
-    // ✅ 4. Mengupdate kategori
+    // Mengupdate kategori
     public function update(Request $request, $id)
     {
-        $category = ProductCategory::find($id);
+        $category = ProductCategories::find($id);
 
         if (!$category) {
             return response()->json(['message' => 'Kategori tidak ditemukan'], 404);
@@ -67,10 +65,10 @@ class ProductCategoriesController extends Controller
         ]);
     }
 
-    // ✅ 5. Menghapus kategori
+    //  Menghapus kategori
     public function destroy($id)
     {
-        $category = ProductCategory::find($id);
+        $category = ProductCategories::find($id);
 
         if (!$category) {
             return response()->json(['message' => 'Kategori tidak ditemukan'], 404);

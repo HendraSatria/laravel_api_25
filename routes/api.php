@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\ProductCategoriesController;
 
 
 Route::prefix('v1')->group(function () {
-    Route::apiResource('product-categories', ProductCategoriesController::class);
+    Route::Resource('product_categories', ProductCategoriesController::class);
     //Route::resource('product-categories', ProductCategoriesController::class);
 
     //Route::get('/product-categories', [ProductCategoriesController::class, 'index']);

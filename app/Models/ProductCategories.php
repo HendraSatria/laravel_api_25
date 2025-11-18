@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductCategory extends Model
+class ProductCategories extends Model
 {
-    protected $fillable = ['name','code', 'description']; //field yang boleh diisi secara massal
+    protected $fillable = ['name', 'description']; //field yang boleh diisi secara massal
 
     public function products()
     {
