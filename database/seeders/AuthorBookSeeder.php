@@ -26,7 +26,7 @@ class AuthorBookSeeder extends Seeder
             $author = Author::create($authorData);
 
             Book::create([
-                'title' => 'Buku 1 oleh ' . $authorData['name'],
+                'title' => 'Manjada wajada ' . $authorData['name'],
                 'author_id' => $author->id,
                 'publication_year' => 2020, // pastikan sama seperti nama kolom di migration
                 'genre' => 'Fiksi',
@@ -37,7 +37,9 @@ class AuthorBookSeeder extends Seeder
                 'author_id' => $author->id,
                 'publication_year' => 2021,
                 'genre' => 'Fiksi',
+
             ]);
+
         }
     }
 }

@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProductCategories extends Model
 {
-    protected $fillable = ['name', 'description']; //field yang boleh diisi secara massal
+    protected $guarded = ['id']; //field yang boleh diisi secara massal
 
-    public function products()
+    public function products() :HasMany
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(related:Product::class);
     }
 }

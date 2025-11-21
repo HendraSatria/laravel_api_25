@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->unsignedBigInteger('author_id');
             $table->integer('publication_year');
+            
+
+            
             $table->timestamps();
 
 
