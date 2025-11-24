@@ -10,7 +10,7 @@ class Product extends Model
        
         'name',
         'code',
-        'descripion',
+        'description',
         'price',
         'product_category_id'
     ];
