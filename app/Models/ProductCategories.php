@@ -11,12 +11,9 @@ class ProductCategories extends Model
 
     public function products() :HasMany
     {
-        return $this->hasMany(related:Product::class);
+        return $this->hasMany(related:Product::class,foreignKey:'product_category_id');
     }
-    public function variants()
-    {
-        return $this->hasMany(related:ProductVariant::class);
-    }
+  
 }
 
 

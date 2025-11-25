@@ -15,7 +15,7 @@ class ProductCategoriesController extends Controller
     public function index()
     {
         try {
-            $categories = ProductCategories::with('products','variants');
+            $categories = ProductCategories::with('products.variants')->get();
 
             return response()->json([
                 'message' => 'Data kategori berhasil ditampilkan',

@@ -24,6 +24,6 @@ class Product extends Model
     // Relasi ke product variants (opsional)
     public function variants()
     {
-        return $this->hasMany(ProductVariant::class);
+        return $this->hasMany(ProductVariant::class , 'product_id');
     }
 }
