@@ -13,4 +13,10 @@ class ProductCategories extends Model
     {
         return $this->hasMany(related:Product::class);
     }
+    public function variants()
+    {
+        return $this->hasMany(related:ProductVariant::class);
+    }
 }
+
+

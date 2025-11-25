@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $products = Product::with('category')->get();
+            $products = Product::with('category','variants')->get();
 
             return response()->json([
                 'type' => 'Success',
@@ -66,7 +66,7 @@ class ProductController extends Controller
     public function show($id)
     {
         try {
-            $product = Product::with('category')->findOrFail($id);
+            $product = Product::with('category','variants')->findOrFail($id);
 
             return response()->json([
                 'type' => 'Success',
