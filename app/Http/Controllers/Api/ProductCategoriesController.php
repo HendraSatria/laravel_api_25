@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ProductCategoriesController extends Controller
 {
-    // ===============================
+    
     // 1. MENAMPILKAN SEMUA KATEGORI
-    // ===============================
+
     public function index()
     {
         try {
@@ -31,9 +31,9 @@ class ProductCategoriesController extends Controller
         }
     }
 
-    // ===============================
+   
     // 2. MENAMBAHKAN KATEGORI
-    // ===============================
+    
     public function store(Request $request)
     {
         try {
@@ -87,9 +87,9 @@ class ProductCategoriesController extends Controller
         }
     }
 
-    // ===============================
+   
     // 4. UPDATE KATEGORI
-    // ===============================
+  
     public function update(Request $request, $id)
     {
         try {
@@ -123,9 +123,9 @@ class ProductCategoriesController extends Controller
         }
     }
 
-    // ===============================
+    
     // 5. MENGHAPUS KATEGORI
-    // ===============================
+   
     public function destroy($id)
     {
         try {
