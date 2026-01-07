@@ -14,7 +14,7 @@ class ProductVariantController extends Controller
     public function index()
     {
         try {
-            $variants = ProductVariant::with('product','category')->get();
+            $variants = ProductVariant::with('product.category')->get();
 
             return response()->json([
                 'type' => 'Success',
@@ -67,7 +67,7 @@ class ProductVariantController extends Controller
     public function show($id)
     {
         try {
-            $variant = ProductVariant::with('product','category')->find($id);
+            $variant = ProductVariant::with('product.category')->find($id);
 
             if (!$variant) {
                 return response()->json([

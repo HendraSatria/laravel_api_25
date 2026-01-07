@@ -19,10 +19,7 @@ class ProductVariant extends Model
 
 
 
-    public function category()
-    {
-        return $this->belongsTo(ProductCategories::class, 'product_category_id');
-    }
+
 
     
 }
